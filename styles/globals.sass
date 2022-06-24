@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;500;600;700&family=Roboto+Slab:wght@100;200;300;400;500;600;700&display=swap')
+@import '__vars'
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+
+html
+  font-size: 62.5%
+  font-family: $Main-font
+  scroll-behavior: smooth
+body
+  background: $Elegant-black
+  color: $White
+body::-webkit-scrollbar
+  width: 0.5rem
+
+body::-webkit-scrollbar-thumb
+  background-color: $Icon-blue
+  outline: none
+
+body
+  scroll-behavior: smooth
+  overflow-x: hidden
+
+.fit__image
+  object-fit: cover
+
+.skeleton__container
+  background: white
+  border: 1px solid #e5e6e9
+  width: 100%
+  z-index: 0
+
+.skeleton
+  width: 100%
+  height: 100%
+  background: linear-gradient(90deg, #eeeeee 8%, #dddddd 18%, #eeeeee 33%)
+  background-size: 400% 100%
+  transform: translateX(0)
+  animation: skeleton 2s ease-in-out infinite
+
+// .disabled
+//   color: $color7
+
+@keyframes skeleton
+  0%
+    background-position: 0% 0
+
+  50%
+    background-position: 100% 0
+
+  100%
+    background-position: 0% 0
