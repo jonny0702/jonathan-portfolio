@@ -7,6 +7,7 @@ import Button from '../components/Button';
 import SkillsSection from '../containers/SkillsSection';
 import SkillsTags from '../components/SkillsTags';
 import ConsoleTag from '../components/ConsoleTag';
+import VoxelContainer from '../containers/VoxelContainer';
 import Socials from '../components/Socials';
 import { IoLogoInstagram, IoLogoGithub, IoLogoTwitch } from 'react-icons/io5';
 import styles from '../styles/Home.module.sass';
@@ -14,13 +15,12 @@ import styles from '../styles/Home.module.sass';
 export default function Home() {
   const textParagrah =
     'Takuya is a freelance and a full-stack developer based in Osaka with a passion for building digital services/stuff he wants. He has a knack for all things launching products, from planning and designing all the way to solving real-life problems with code. When not online, he loves hanging out with his camera. Currently, he is living off of his own product called Inkdrop. He publishes content for marketing his products and his YouTube channel called "Dev as Life" has more than 100k subscribers.';
+
   return (
     <div className={styles.container}>
       <MenuNav />
       <section className={styles['Model__container']}>
-        <div>
-          <h2>3d Model Incoming...</h2>
-        </div>
+        <VoxelContainer />
       </section>
       <section className={styles['presentation__section--container']}>
         <HeaderContainer>
