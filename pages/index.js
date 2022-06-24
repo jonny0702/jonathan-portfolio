@@ -8,6 +8,7 @@ import SkillsSection from '../containers/SkillsSection';
 import SkillsTags from '../components/SkillsTags';
 import ConsoleTag from '../components/ConsoleTag';
 import VoxelContainer from '../containers/VoxelContainer';
+import SlideMenuBar from '../containers/SlideMenuBar';
 import Socials from '../components/Socials';
 import { IoLogoInstagram, IoLogoGithub, IoLogoTwitch } from 'react-icons/io5';
 import styles from '../styles/Home.module.sass';
@@ -18,7 +19,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <MenuNav />
+      <MenuNav renderSlideMenuBar={(props) => <SlideMenuBar {...props} />} />
       <section className={styles['Model__container']}>
         <VoxelContainer />
       </section>
