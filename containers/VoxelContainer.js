@@ -1,5 +1,11 @@
 import { Suspense, useRef, useEffect, useState } from 'react';
-import { Canvas, useThree, pointLight, ambientLight } from '@react-three/fiber';
+import {
+  Canvas,
+  useThree,
+  pointLight,
+  ambientLight,
+  useFrame,
+} from '@react-three/fiber';
 import { OrbitControls, Box, Sphere } from '@react-three/drei';
 import * as THREE from 'three';
 import Scene from '../components/Scene';
@@ -13,41 +19,45 @@ const Controls = () => {
   return <OrbitControls args={[camera, domElement]} enableDamping />;
 };
 const CameraHelper = () => {
-  const camera = new THREE.OrthographicCamera(
-    -245,
-    245,
-    274,
-    -274,
-    0.01,
-    50000
-  );
+  const camera = new THREE.OrthographicCamera(-245, 245, 274, -274, 0.01, 5000);
   return (
     <group>
       <cameraHelper
         args={[camera]}
-        position={[
-          20 * Math.sin(0.2 * Math.PI),
-          10,
-          20 * Math.cos(0.2 * Math.PI),
-        ]}
+        position={[20 * Math.sin(0.2 * Math.PI), 5, 25 * Math.cos(2 * Math.PI)]}
       />
     </group>
   );
 };
+
+const Animation = () => {
+  const [target] = useState(new THREE.Vector3(-0.5, -120, -100));
+  const voxel = useRef();
+  // useFrame(({ clock }) => {
+  //   const animate = clock.getElapsedTime() / 4;
+  //   voxel.current.rotation.y = -animate;
+  // });
+  return (
+    <mesh ref={voxel}>
+      <Scene position={target} scale={[0.1, 0.1, 0.1]} />
+    </mesh>
+  );
+};
+
 export default function VoxelContainer() {
+  const voxelRef = useRef();
   const [aspectWidth, setAspectWidht] = useState(null);
   const [aspectHeight, setAspectHeight] = useState(null);
   const [scale, setScale] = useState(null);
+  const [target] = useState(new THREE.Vector3(-0.5, -100, 0));
+
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
-      20 * Math.sin(0.2 * Math.PI),
-      10,
+      20 * Math.sin(0.1 * Math.PI),
+      5,
       20 * Math.cos(0.2 * Math.PI)
     )
   );
-  const [target] = useState(new THREE.Vector3(-20, -130, -100));
-
-  const voxelRef = useRef();
 
   useEffect(() => {
     const sh = voxelRef.current.clientHeight;
@@ -57,33 +67,37 @@ export default function VoxelContainer() {
     setAspectWidht(sw);
     setAspectHeight(sh);
   }, []);
-  console.log(aspectWidth);
+
   return (
     <div ref={voxelRef} className={styles.Model__container}>
       <Suspense fallback={null}>
         <Canvas
           orthographic
           camera={{
-            left: -aspectWidth,
-            right: aspectWidth,
-            top: aspectHeight,
-            bottom: -aspectHeight,
-            near: 0.01,
-            far: 500000,
+            left: -scale / 2,
+            right: scale / 2,
+            top: scale / 2,
+            bottom: -scale / 2,
+            near: 0.1,
+            far: 5000,
             position: initialCameraPosition,
+            lookat: { target },
           }}
         >
-          <Scene position={target} scale={[0.12, 0.12, 0.12]} />
-
+          <Animation />
           <pointLight
-            position={[0, 0, 0]}
-            intensity={0.2}
-            color={'#FFF'}
-            far={100}
+            position={[
+              20 * Math.sin(0.2 * Math.PI),
+              10,
+              20 * Math.cos(0.2 * Math.PI),
+            ]}
+            intensity={0.3}
+            color={'#FFFF'}
+            far={500}
           />
           <ambientLight color={'#FFFF'} intensity={0.5} />
-          <Controls />
-          <CameraHelper />
+          {/* <Controls /> */}
+          {/* <CameraHelper /> */}
         </Canvas>
       </Suspense>
     </div>
