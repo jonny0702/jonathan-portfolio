@@ -6,13 +6,13 @@ export default function SlideMenuBar({ isOpen }) {
   return (
     <div
       className={styles.SlideMenu__container}
-      style={{ width: isOpen ? '25.9rem' : '0' }}
+      style={{ transform: `translateX(${isOpen ? '100%' : '0'})` }}
     >
       <ul className={styles['slideMenuBar__items--container']}>
-        <SlideMenuBarItem itemText="../root/About" routes="/" />
-        <SlideMenuBarItem itemText="../root/Works" routes="/works" />
+        <SlideMenuBarItem itemText="$../root/About" routes="/" />
+        <SlideMenuBarItem itemText="$../root/Works" routes="/works" />
         <SlideMenuBarItem
-          itemText="../root/GitHub"
+          itemText="$../root/GitHub"
           routes="https://github.com/jonny0702"
         />
       </ul>
