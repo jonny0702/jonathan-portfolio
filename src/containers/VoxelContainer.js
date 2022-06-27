@@ -8,6 +8,7 @@ import {
 } from '@react-three/fiber';
 import { OrbitControls, Box, Sphere } from '@react-three/drei';
 import * as THREE from 'three';
+import useScreenMediaQuery from '../hooks/useScreenMediaquery';
 import Scene from '../components/Scene';
 import styles from '../styles/VoxelModel.module.sass';
 
@@ -31,7 +32,10 @@ const CameraHelper = () => {
 };
 
 const Animation = () => {
+  const [modelScale, setModelScale] = useState([0.1, 0.1, 0.1]);
+  const { isMatched: tablet } = useScreenMediaQuery(768);
   const [target] = useState(new THREE.Vector3(-0.5, -120, -100));
+
   const voxel = useRef();
   // useFrame(({ clock }) => {
   //   const animate = clock.getElapsedTime() / 4;
@@ -39,7 +43,10 @@ const Animation = () => {
   // });
   return (
     <mesh ref={voxel}>
-      <Scene position={target} scale={[0.1, 0.1, 0.1]} />
+      {tablet && (
+        <Scene position={[-0.5, -120, -150]} scale={[0.15, 0.15, 0.15]} />
+      )}
+      {!tablet && <Scene position={target} scale={modelScale} />}
     </mesh>
   );
 };
