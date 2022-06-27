@@ -10,7 +10,6 @@ export default function MenuNav({ renderSlideMenuBar }) {
   const handleOpenMenu = () => {
     handleDisplayMenu(!isOpen);
   };
-  console.log(isOpen);
   return (
     <nav className={styles.MenuNav__container}>
       <div className={styles['MenuNav__navigationBar--container']}>
