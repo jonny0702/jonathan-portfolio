@@ -4,6 +4,7 @@ import SlideMenuBar from '../containers/SlideMenuBar';
 import VoxelContainer from '../containers/VoxelContainer';
 import PortfolioContainer from '../containers/PortfolioContainer';
 import CardInfo from '../components/CardInfo';
+import ContactMeSection from '../containers/ContactMeSection';
 import styles from '../styles/Works.module.sass';
 import LostTraverller from '../assets/img/LostTraveller.png';
 import WeatherApp from '../assets/img/WeatherApp.png';
@@ -39,6 +40,9 @@ export default function Works() {
               link="https://weather-r-app.netlify.app/"
             />
           </PortfolioContainer>
+          <ContactMeSection>
+            <TitleSection titleText="Contact Me" />
+          </ContactMeSection>
         </section>
       </div>
     </>

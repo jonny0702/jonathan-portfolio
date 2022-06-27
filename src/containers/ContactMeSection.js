@@ -4,7 +4,7 @@ import styles from '../styles/ContactMeSection.module.sass';
 export default function ContactMeSection({ children }) {
   return (
     <>
-      <div className={styles.ContactMe__container}>
+      <div className={styles.ContactMe__container} id="contact">
         {children}
         <div className={styles['Contact__form--container']}>
           <form className={styles['contact__form']}>

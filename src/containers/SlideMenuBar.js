@@ -9,10 +9,11 @@ export default function SlideMenuBar({ isOpen }) {
       style={{ transform: `translateX(${isOpen ? '0' : '100%'})` }}
     >
       <ul className={styles['slideMenuBar__items--container']}>
-        <SlideMenuBarItem itemText="$../root/About" routes="/" />
-        <SlideMenuBarItem itemText="$../root/Works" routes="/works" />
+        <SlideMenuBarItem itemText="$/About" routes="/" />
+        <SlideMenuBarItem itemText="$/Works" routes="/works" />
+        <SlideMenuBarItem itemText="$/contact" routes="/#contact" />
         <SlideMenuBarItem
-          itemText="$../root/GitHub"
+          itemText="$/GitHub"
           routes="https://github.com/jonny0702"
         />
       </ul>
