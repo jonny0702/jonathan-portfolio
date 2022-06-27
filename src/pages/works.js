@@ -23,19 +23,19 @@ export default function Works() {
             <CardInfo
               images={LostTraverller}
               titleProject="Lost Traveller"
-              projectDescription="Lorem Ipsum"
+              projectDescription="A internal turism digital service to share the beatifull places that we not know in panama"
               link="https://losttraveler.vercel.app/"
             />
             <CardInfo
               images={LostTravellerAdmin}
-              titleProject="Lost Traveller AdminSide"
-              projectDescription="Lorem Ipsum"
+              titleProject="Lost Traveller Admin side"
+              projectDescription="The admin side of Lost Traveller which is responsible for managing the verification request and uploaded posts "
               link="https://github.com/jonny0702/lost-traveller-next-dashboard"
             />
             <CardInfo
               images={WeatherApp}
               titleProject="Weather App"
-              projectDescription="Lorem Ipsum"
+              projectDescription="App that show the weather data in your area"
               link="https://weather-r-app.netlify.app/"
             />
           </PortfolioContainer>
