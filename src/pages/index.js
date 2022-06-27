@@ -93,18 +93,21 @@ export default function Home() {
               <TitleSection titleText="Socials" />
               <Socials
                 socialMediaText="@jonhy_vr"
+                socialsLinks="https://www.instagram.com/jonhy_vr/"
                 renderSocialIcon={() => (
                   <IoLogoInstagram className={styles.SocialIcons} />
                 )}
               />
               <Socials
                 socialMediaText="@jonny0702"
+                socialsLinks="https://github.com/jonny0702"
                 renderSocialIcon={() => (
                   <IoLogoGithub className={styles.SocialIcons} />
                 )}
               />
               <Socials
                 socialMediaText="@jonhy_vr"
+                socialsLinks="https://www.twitch.tv/jonhy_vr"
                 renderSocialIcon={() => (
                   <IoLogoTwitch className={styles.SocialIcons} />
                 )}
