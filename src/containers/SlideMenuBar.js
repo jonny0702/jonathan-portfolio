@@ -6,7 +6,7 @@ export default function SlideMenuBar({ isOpen }) {
   return (
     <div
       className={styles.SlideMenu__container}
-      style={{ transform: `translateX(${isOpen ? '100%' : '0'})` }}
+      style={{ transform: `translateX(${isOpen ? '0' : '100%'})` }}
     >
       <ul className={styles['slideMenuBar__items--container']}>
         <SlideMenuBarItem itemText="$../root/About" routes="/" />
