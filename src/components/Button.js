@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import styles from '../styles/Button.module.sass';
 
-export default function Button({ buttonText }) {
+export default function Button({ buttonText, routes }) {
   return (
     <div className={styles.ButtonWoks__container}>
-      <Link href="/works">
+      <Link href={routes}>
         <a>
           <button className={styles.ButtonWorks__button}>{buttonText}</button>
         </a>

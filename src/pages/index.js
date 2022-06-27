@@ -10,6 +10,7 @@ import ConsoleTag from '../components/ConsoleTag';
 import VoxelContainer from '../containers/VoxelContainer';
 import SlideMenuBar from '../containers/SlideMenuBar';
 import Socials from '../components/Socials';
+import ContactMeSection from '../containers/ContactMeSection';
 import { IoLogoInstagram, IoLogoGithub, IoLogoTwitch } from 'react-icons/io5';
 import styles from '../styles/Home.module.sass';
 
@@ -44,7 +45,7 @@ export default function Home() {
                 <TitleSection titleText="Info" />
                 <BodyParagraph text={textParagrah} />
               </div>
-              <Button buttonText="My Portfolio" />
+              <Button buttonText="My Portfolio" routes="/works" />
               <TitleSection titleText="Technologies" />
               <SkillsSection>
                 <SkillsTags
@@ -114,6 +115,9 @@ export default function Home() {
               />
             </HomeBody>
           </main>
+          <ContactMeSection>
+            <TitleSection titleText="Contact Me" />
+          </ContactMeSection>
         </section>
       </div>
     </>
