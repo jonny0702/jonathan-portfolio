@@ -5,11 +5,9 @@
   height: 50vh
   width: 100vw
   z-index: -10
-  // border: solid red
 .presentation__section--container
   width: 100vw
   height: fit-content
-  // border: solid blue
 .Header__container
   display: flex
   font-family: $Main-font
@@ -38,3 +36,23 @@
 .SocialIcons
   font-size: 2rem
   color: $Backg-blue
+
+@media  ( min-width: 768px )
+  .Home__container
+    display: flex
+    flex-direction: row-reverse
+  .presentation__section--container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 50vw
+    height: 100vh
+  .Model__container
+    position: sticky
+    align-items: center
+    width: 40vw
+    height: 100vh
+  .Header__container
+    font-family: $Main-font
+  .MainPage__infoContainer
+    jusitfy-self: center

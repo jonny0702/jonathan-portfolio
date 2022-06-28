@@ -2,7 +2,6 @@ import SlideMenuBarItem from '../components/SlideMenuBarItem';
 import styles from '../styles/SlideMenuBar.module.sass';
 
 export default function SlideMenuBar({ isOpen }) {
-  console.log(isOpen);
   return (
     <div
       className={styles.SlideMenu__container}
