@@ -6,7 +6,7 @@ import { HamburgerIcon, SunIcon } from '@chakra-ui/icons';
 import styles from '../styles/MenuNav.module.sass';
 import SlideMenuBarItem from '../components/SlideMenuBarItem';
 
-export default function MenuNav({ renderSlideMenuBar }) {
+export default function MenuNav({ renderSlideMenuBar, isWorksPage }) {
   const [isOpen, handleDisplayMenu] = useState(false);
 
   const { isMatched: tablet } = useScreenMediaQuery(768);
@@ -25,7 +25,10 @@ export default function MenuNav({ renderSlideMenuBar }) {
           <>
             <SlideMenuBarItem itemText="$/About" routes="/" />
             <SlideMenuBarItem itemText="$/Works" routes="/works" />
-            <SlideMenuBarItem itemText="$/Contact" routes="/#contact" />
+            <SlideMenuBarItem
+              itemText="$/Contact"
+              routes={`${isWorksPage ? '/works/#contact' : '/#contact'}`}
+            />
             <SlideMenuBarItem
               itemText="$/GitHub"
               routes="https://github.com/jonny0702"

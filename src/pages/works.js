@@ -13,7 +13,10 @@ import LostTravellerAdmin from '../assets/img/LostTravellerAdmin.png';
 export default function Works() {
   return (
     <>
-      <MenuNav renderSlideMenuBar={(props) => <SlideMenuBar {...props} />} />
+      <MenuNav
+        isWorksPage
+        renderSlideMenuBar={(props) => <SlideMenuBar {...props} />}
+      />
       <div className={styles.Works__container}>
         <section className={styles['Model__container']}>
           <VoxelContainer />
