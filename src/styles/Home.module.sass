@@ -45,16 +45,26 @@
     display: flex
     flex-direction: column
     justify-content: center
+    margin-right: 35rem 
     width: 50vw
     height: 100vh
   .Model__container
-    position: sticky
+    position: fixed
     align-items: center
     width: 50vw
     height: 100vh
   .Header__container
     font-family: $Main-font
   .MainPage__infoContainer
-    margin-top: 10rem 
+    margin-top: 20rem
     jusitfy-self: center
     gap: 1rem
+@media  ( min-width: 1024px )
+  .presentation__section--container
+    margin-right: 50rem 
+    width: 40vw
+@media  ( min-width: 1440px )
+  .presentation__section--container
+    margin-right: 70rem 
+    width: 35vw
+  
