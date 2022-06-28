@@ -13,7 +13,7 @@ export default function CardInfo({
       <Link href={link}>
         <a className={styles['CardInfo__container--link']}>
           <div className={styles['CardItem__image--container']}>
-            <Image src={images} />
+            <Image layout="fill" src={images} objectFit="cover" />
           </div>
           <div className={styles['CardInfo__info--container']}>
             <h3 className={styles.CardInfo__title}>{titleProject}</h3>

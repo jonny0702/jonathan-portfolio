@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import TitleSection from '../components/TitleSection';
 import MenuNav from '../containers/MenuNav';
 import SlideMenuBar from '../containers/SlideMenuBar';
@@ -11,6 +13,22 @@ import WeatherApp from '../assets/img/WeatherApp.png';
 import LostTravellerAdmin from '../assets/img/LostTravellerAdmin.png';
 
 export default function Works() {
+  const { isReady } = useRouter();
+  const [works, setWorks] = useState([]);
+  const hasWorks = works.length > 0;
+  const fetchPost = async () => {
+    try {
+      const response = await fetch('/api/works');
+      const data = await response.json();
+      console.log(data);
+      setWorks(data.works);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+  useEffect(() => {
+    isReady && fetchPost();
+  }, [isReady]);
   return (
     <>
       <MenuNav
@@ -24,24 +42,15 @@ export default function Works() {
         <section className={styles.WorksInfo__container}>
           <TitleSection titleText="Works" />
           <PortfolioContainer>
-            <CardInfo
-              images={LostTraverller}
-              titleProject="Lost Traveller"
-              projectDescription="A internal turism digital service to share the beatifull places that we not know in panama"
-              link="https://losttraveler.vercel.app/"
-            />
-            <CardInfo
-              images={LostTravellerAdmin}
-              titleProject="Lost Traveller Admin side"
-              projectDescription="The admin side of Lost Traveller which is responsible for managing the verification request and uploaded posts "
-              link="https://github.com/jonny0702/lost-traveller-next-dashboard"
-            />
-            <CardInfo
-              images={WeatherApp}
-              titleProject="Weather App"
-              projectDescription="App that show the weather data in your area"
-              link="https://weather-r-app.netlify.app/"
-            />
+            {hasWorks &&
+              works.map((info) => (
+                <CardInfo
+                  images={info.photos[0]}
+                  titleProject={info.name}
+                  projectDescription={info.description}
+                  link={`${info.presentation}`}
+                />
+              ))}
           </PortfolioContainer>
           <ContactMeSection isWorksPage>
             <TitleSection titleText="Contact Me" />
