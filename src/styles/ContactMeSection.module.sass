@@ -26,7 +26,19 @@
   font-size: $middle-text-size
   color: $White
   outline: none
+.ContactMe__containerWorks
+  display: flex
+  flex-direction: column
+  margin-top: 1rem 
+  width: 100vw
+  height: fit-content
 @media   ( min-width: 768px  )
   .ContactMe__container
     width: 45vw
-  
+  .ContactMe__containerWorks
+    width: 45vw
+@media   ( min-width: 1024px  )
+  .ContactMe__container
+    width: 40vw
+  .ContactMe__containerWorks
+    width: 50vw

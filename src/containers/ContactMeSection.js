@@ -1,10 +1,17 @@
 import Button from '../components/Button';
 import styles from '../styles/ContactMeSection.module.sass';
 
-export default function ContactMeSection({ children }) {
+export default function ContactMeSection({ children, isWorksPage }) {
   return (
     <>
-      <div className={styles.ContactMe__container} id="contact">
+      <div
+        className={`${
+          isWorksPage
+            ? styles.ContactMe__containerWorks
+            : styles.ContactMe__container
+        }`}
+        id="contact"
+      >
         {children}
         <div className={styles['Contact__form--container']}>
           <form className={styles['contact__form']}>

@@ -34,6 +34,7 @@ const CameraHelper = () => {
 const Animation = () => {
   const [modelScale, setModelScale] = useState([0.1, 0.1, 0.1]);
   const { isMatched: tablet } = useScreenMediaQuery(768);
+
   const [target] = useState(new THREE.Vector3(-0.5, -120, -100));
 
   const voxel = useRef();
@@ -46,6 +47,7 @@ const Animation = () => {
       {tablet && (
         <Scene position={[-0.5, -120, -150]} scale={[0.15, 0.15, 0.15]} />
       )}
+
       {!tablet && <Scene position={target} scale={modelScale} />}
     </mesh>
   );

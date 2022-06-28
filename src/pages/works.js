@@ -43,7 +43,7 @@ export default function Works() {
               link="https://weather-r-app.netlify.app/"
             />
           </PortfolioContainer>
-          <ContactMeSection>
+          <ContactMeSection isWorksPage>
             <TitleSection titleText="Contact Me" />
           </ContactMeSection>
         </section>
