@@ -16,12 +16,14 @@ import Socials from '../components/Socials';
 import ContactMeSection from '../containers/ContactMeSection';
 import { IoLogoInstagram, IoLogoGithub, IoLogoTwitch } from 'react-icons/io5';
 import styles from '../styles/Home.module.sass';
+import LoaderContainer from '../containers/LoaderContainer';
 
 export default function Home() {
+  const { isReady } = useRouter();
+
   const [homeInfo, setHomeInfo] = useState({});
   const [skills, setSkills] = useState([]);
-  const { isReady } = useRouter();
-  const hasInfo = Object.keys(homeInfo).length > 0;
+
   const fetchHomeInfo = async () => {
     try {
       const response = await fetch('/api');
@@ -32,11 +34,11 @@ export default function Home() {
       console.error(error.message);
     }
   };
+
   useEffect(() => {
     isReady && fetchHomeInfo();
   }, [isReady]);
-  // console.log(homeInfo.skillsTags?.map((skills) => skills.renderIcon[0]));
-  console.log(skills.map((item) => item.renderIcon));
+
   return (
     <>
       <MenuNav renderSlideMenuBar={(props) => <SlideMenuBar {...props} />} />

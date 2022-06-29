@@ -10,6 +10,7 @@ import { OrbitControls, Box, Sphere } from '@react-three/drei';
 import * as THREE from 'three';
 import useScreenMediaQuery from '../hooks/useScreenMediaquery';
 import Scene from '../components/Scene';
+import LoaderContainer from './LoaderContainer';
 import styles from '../styles/VoxelModel.module.sass';
 
 const Controls = () => {
