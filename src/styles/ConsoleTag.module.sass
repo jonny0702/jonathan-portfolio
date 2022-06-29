@@ -1,9 +1,26 @@
 @import '__vars'
 
 .ConsoleTag__container
+  display: flex
+  justify-content: center
+  align-items: center
   padding: .7rem
-  width: fit-content
+  width: 8rem
+  height: 4rem
   border-radius: 10px
+  overflow: hidden
   border: 2px dotted $White
 .ConsoleTag__text
   font-size: $middle-text-size
+.ConsoleTag__container:hover
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 8rem
+  height: 4rem
+  padding: .7rem
+  border-radius: 10px
+  border: 2px dotted $White
+  background: #5f5f5f
+  transform: scale(1.1)
+  transition: ease all .5s

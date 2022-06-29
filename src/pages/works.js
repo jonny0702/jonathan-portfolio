@@ -8,14 +8,13 @@ import PortfolioContainer from '../containers/PortfolioContainer';
 import CardInfo from '../components/CardInfo';
 import ContactMeSection from '../containers/ContactMeSection';
 import styles from '../styles/Works.module.sass';
-import LostTraverller from '../assets/img/LostTraveller.png';
-import WeatherApp from '../assets/img/WeatherApp.png';
-import LostTravellerAdmin from '../assets/img/LostTravellerAdmin.png';
 
 export default function Works() {
   const { isReady } = useRouter();
+
   const [works, setWorks] = useState([]);
   const hasWorks = works.length > 0;
+
   const fetchPost = async () => {
     try {
       const response = await fetch('/api/works');
@@ -29,6 +28,7 @@ export default function Works() {
   useEffect(() => {
     isReady && fetchPost();
   }, [isReady]);
+
   return (
     <>
       <MenuNav
