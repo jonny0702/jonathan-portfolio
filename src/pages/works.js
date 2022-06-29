@@ -25,6 +25,7 @@ export default function Works() {
       console.error(error.message);
     }
   };
+
   useEffect(() => {
     isReady && fetchPost();
   }, [isReady]);
@@ -45,6 +46,7 @@ export default function Works() {
             {hasWorks &&
               works.map((info) => (
                 <CardInfo
+                  keys={info.id}
                   images={info.photos[0]}
                   titleProject={info.name}
                   projectDescription={info.description}
