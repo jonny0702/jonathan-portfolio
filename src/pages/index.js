@@ -1,5 +1,6 @@
 import { useState, useReducer, useEffect } from 'react';
-import useScreenMediaQuery from '../hooks/useScreenMediaquery';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 import MenuNav from '../containers/MenuNav';
 import HomeBody from '../containers/HomeBody';
 import TitleSection from '../components/TitleSection';
@@ -17,23 +18,25 @@ import { IoLogoInstagram, IoLogoGithub, IoLogoTwitch } from 'react-icons/io5';
 import styles from '../styles/Home.module.sass';
 
 export default function Home() {
-  const techArr = [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'NextJs',
-    'ThreeJs',
-    'Azure',
-    'Node',
-    'Express',
-    'Firebase',
-  ];
-  const textParagrah =
-    'Jonathan is a full-stack developer based in Panama, with a passion to solve real-life problems building software. When he’s not in the computer, he loves playing the piano or draw. Currently he is building his own digital service (Lost Traveller) with a team of three developers, and he likes studying some new technologies in his free time and building small coding stuff.';
-
-  const { isMatched: tablet } = useScreenMediaQuery(768);
-
+  const [homeInfo, setHomeInfo] = useState({});
+  const [skills, setSkills] = useState([]);
+  const { isReady } = useRouter();
+  const hasInfo = Object.keys(homeInfo).length > 0;
+  const fetchHomeInfo = async () => {
+    try {
+      const response = await fetch('/api');
+      const data = await response.json();
+      setHomeInfo(data.info);
+      setSkills(data.info?.skillsTags);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+  useEffect(() => {
+    isReady && fetchHomeInfo();
+  }, [isReady]);
+  // console.log(homeInfo.skillsTags?.map((skills) => skills.renderIcon[0]));
+  console.log(skills.map((item) => item.renderIcon));
   return (
     <>
       <MenuNav renderSlideMenuBar={(props) => <SlideMenuBar {...props} />} />
@@ -59,15 +62,30 @@ export default function Home() {
             <HomeBody>
               <div className={styles['MainPage__infoContainer--text']}>
                 <TitleSection titleText="Info" />
-                <BodyParagraph text={textParagrah} />
+                <BodyParagraph text={homeInfo.textParagraph} />
               </div>
               <Button buttonText="My Portfolio" routes="/works" />
               <TitleSection titleText="Technologies" />
               <SkillsSection>
-                {techArr.map((tech) => (
+                {skills.map((item) => (
                   <SkillsTags
-                    textTag={tech}
-                    renderTag={(props) => <ConsoleTag {...props} />}
+                    key={item.key}
+                    textTag={item.textTag}
+                    renderTag={(props) => (
+                      <ConsoleTag
+                        {...props}
+                        renderImg={() => (
+                          <div className={styles['icons__image--container']}>
+                            <Image
+                              className={styles.iconImage}
+                              layout="fill"
+                              objectFit="cover"
+                              src={item.renderIcon[0]}
+                            />
+                          </div>
+                        )}
+                      />
+                    )}
                   />
                 ))}
               </SkillsSection>
