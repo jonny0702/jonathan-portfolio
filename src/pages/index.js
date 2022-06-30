@@ -15,6 +15,7 @@ import VoxelContainer from '../containers/VoxelContainer';
 import SlideMenuBar from '../containers/SlideMenuBar';
 import Socials from '../components/Socials';
 import ContactMeSection from '../containers/ContactMeSection';
+import SubmitModal from '../containers/SubmitModal';
 import {
   IoLogoInstagram,
   IoLogoGithub,
@@ -25,7 +26,10 @@ import styles from '../styles/Home.module.sass';
 
 export default function Home() {
   const { darkMode } = useContext(DarkModeContext);
-  const { isReady } = useRouter();
+  const {
+    isReady,
+    query: { state },
+  } = useRouter();
 
   const [homeInfo, setHomeInfo] = useState({});
   const [skills, setSkills] = useState([]);
@@ -44,8 +48,10 @@ export default function Home() {
   useEffect(() => {
     isReady && fetchHomeInfo();
   }, [isReady]);
+
   return (
     <>
+      {state === 'success' && <SubmitModal />}
       <MenuNav
         darkMode={darkMode}
         renderSlideMenuBar={(props) => <SlideMenuBar {...props} />}
