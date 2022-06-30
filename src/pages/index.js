@@ -15,9 +15,13 @@ import VoxelContainer from '../containers/VoxelContainer';
 import SlideMenuBar from '../containers/SlideMenuBar';
 import Socials from '../components/Socials';
 import ContactMeSection from '../containers/ContactMeSection';
-import { IoLogoInstagram, IoLogoGithub, IoLogoTwitch } from 'react-icons/io5';
+import {
+  IoLogoInstagram,
+  IoLogoGithub,
+  IoLogoTwitch,
+  IoLogoLinkedin,
+} from 'react-icons/io5';
 import styles from '../styles/Home.module.sass';
-import LoaderContainer from '../containers/LoaderContainer';
 
 export default function Home() {
   const { darkMode } = useContext(DarkModeContext);
@@ -138,6 +142,20 @@ export default function Home() {
                 socialsLinks="https://www.twitch.tv/jonhy_vr"
                 renderSocialIcon={() => (
                   <IoLogoTwitch
+                    className={`${
+                      !darkMode
+                        ? styles.SocialIcons
+                        : styles['SocilaIcons--light']
+                    }`}
+                  />
+                )}
+              />
+              <Socials
+                darkMode={darkMode}
+                socialMediaText="@jonhy_vr"
+                socialsLinks="https://www.linkedin.com/in/jonathan-vergara-542b90243/"
+                renderSocialIcon={() => (
+                  <IoLogoLinkedin
                     className={`${
                       !darkMode
                         ? styles.SocialIcons

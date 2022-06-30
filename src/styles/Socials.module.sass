@@ -6,17 +6,37 @@
   width: 90%
   margin: auto
 .Socials__infoContainer
+  width: 15rem
+  height: 3rem
   display: flex
   flex-direction: row
-  gap: .5rem
-  width: 100%
+  justify-content: center
+  align-items: center
+  gap: .3rem
+.Socials__infoContainer:hover
+  display: flex
+  flex-direction: row
+  gap: .3rem
+  background: #46aca538
+  border-radius: 10px
+  transition: ease all .2s
 .Socials__text
   font-size: $text-size
   color: $Backg-blue
+  font-weight: 600 
+.Socials__text:hover
+  font-size: $text-size
+  color: $Backg-blue
+  text-decoration: underline #b670f8
   font-weight: 600 
 .Socials__text--light
   font-size: $text-size
   color: $Icon-blue
   font-weight: 600 
+.Socials__text--light:hover
+  font-size: $text-size
+  color: $Icon-blue
+  font-weight: 600 
+  text-decoration: underline $Icon-blue
 .Socials__link
   text-decoration: none
