@@ -6,9 +6,8 @@ source: https://sketchfab.com/3d-models/keyboardist-robot-1510292849ab4f5d9de37a
 title: Keyboardist Robot
 */
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
-import { useEffect } from 'react';
 
 export default function Model({ ...props }) {
   const group = useRef();
