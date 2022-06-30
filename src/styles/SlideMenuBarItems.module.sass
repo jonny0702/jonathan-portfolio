@@ -5,6 +5,7 @@
   background: transparent
   text-decoration: none
   cursor: pointer
+  
 .SlideMenuItems__links
   display: flex
   align-items: center
@@ -16,6 +17,19 @@
   font-family: $Main-font
   outline: none
   cursor: pointer
+
+.SlideMenuItems__links--light
+  display: flex
+  align-items: center
+  background: none
+  height: 3rem
+  border: none
+  color: $Letter-brown
+  font-size: $sub-title-size
+  font-family: $Main-font
+  outline: none
+  cursor: pointer
+  
 .SlideMenuItems__links:hover
   display: flex
   align-items: center
@@ -26,7 +40,31 @@
   outline: none
   cursor: pointer
 
+.SlideMenuItems__links--light:hover
+  display: flex
+  align-items: center
+  background: none
+  height: 3rem
+  border: none
+  color: #00615a
+  font-size: $sub-title-size
+  font-family: $Main-font
+  outline: none
+  cursor: pointer
+
 @media (min-width: 768px) 
+  
+  .SlideMenuItems__links--light
+    display: flex
+    align-items: center
+    background: none
+    height: 3rem
+    border: none
+    color: $Icon-blue
+    font-size: $sub-title-size
+    font-family: $Main-font
+    outline: none
+    cursor: pointer
   .SlideMenuItems__container--links
     margin-left: 1.5rem 
     width: inherit

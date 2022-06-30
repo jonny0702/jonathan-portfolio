@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useRouter } from 'next/router';
+import { DarkModeContext } from '../context/DarkModeContext';
 import TitleSection from '../components/TitleSection';
 import MenuNav from '../containers/MenuNav';
 import SlideMenuBar from '../containers/SlideMenuBar';
@@ -10,6 +11,7 @@ import ContactMeSection from '../containers/ContactMeSection';
 import styles from '../styles/Works.module.sass';
 
 export default function Works() {
+  const { darkMode } = useContext(DarkModeContext);
   const { isReady } = useRouter();
 
   const [works, setWorks] = useState([]);
@@ -19,7 +21,6 @@ export default function Works() {
     try {
       const response = await fetch('/api/works');
       const data = await response.json();
-      console.log(data);
       setWorks(data.works);
     } catch (error) {
       console.error(error.message);
@@ -36,16 +37,23 @@ export default function Works() {
         isWorksPage
         renderSlideMenuBar={(props) => <SlideMenuBar {...props} />}
       />
-      <div className={styles.Works__container}>
+      <div
+        className={`${
+          !darkMode
+            ? styles.Works__container
+            : styles['Works__container--light']
+        }`}
+      >
         <section className={styles['Model__container']}>
           <VoxelContainer />
         </section>
-        <section className={styles.WorksInfo__container}>
+        <section className={`${styles.WorksInfo__container}`}>
           <TitleSection titleText="Works" />
           <PortfolioContainer>
             {hasWorks &&
               works.map((info) => (
                 <CardInfo
+                  darkMode={darkMode}
                   keys={info.id}
                   images={info.photos[0]}
                   titleProject={info.name}
@@ -54,7 +62,7 @@ export default function Works() {
                 />
               ))}
           </PortfolioContainer>
-          <ContactMeSection isWorksPage>
+          <ContactMeSection isWorksPage darkMode={darkMode}>
             <TitleSection titleText="Contact Me" />
           </ContactMeSection>
         </section>

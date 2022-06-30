@@ -1,5 +1,6 @@
-import { useState, useReducer, useEffect } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { DarkModeContext } from '../context/DarkModeContext';
 import Image from 'next/image';
 import MenuNav from '../containers/MenuNav';
 import HomeBody from '../containers/HomeBody';
@@ -19,6 +20,7 @@ import styles from '../styles/Home.module.sass';
 import LoaderContainer from '../containers/LoaderContainer';
 
 export default function Home() {
+  const { darkMode } = useContext(DarkModeContext);
   const { isReady } = useRouter();
 
   const [homeInfo, setHomeInfo] = useState({});
@@ -38,11 +40,19 @@ export default function Home() {
   useEffect(() => {
     isReady && fetchHomeInfo();
   }, [isReady]);
-
   return (
     <>
-      <MenuNav renderSlideMenuBar={(props) => <SlideMenuBar {...props} />} />
-      <div className={styles.Home__container}>
+      <MenuNav
+        darkMode={darkMode}
+        renderSlideMenuBar={(props) => <SlideMenuBar {...props} />}
+      />
+      <div
+        className={`${
+          !darkMode
+            ? styles.Home__container
+            : styles['Home__container--LightMode']
+        }`}
+      >
         <section className={styles['Model__container']}>
           <VoxelContainer />
         </section>
@@ -95,28 +105,49 @@ export default function Home() {
               <BodyParagraph text="Art, Music, Drawing, Playing Piano and Guitar, Phography, Math and Science" />
               <TitleSection titleText="Socials" />
               <Socials
+                darkMode={darkMode}
                 socialMediaText="@jonhy_vr"
                 socialsLinks="https://www.instagram.com/jonhy_vr/"
                 renderSocialIcon={() => (
-                  <IoLogoInstagram className={styles.SocialIcons} />
+                  <IoLogoInstagram
+                    className={`${
+                      !darkMode
+                        ? styles.SocialIcons
+                        : styles['SocilaIcons--light']
+                    }`}
+                  />
                 )}
               />
               <Socials
+                darkMode={darkMode}
                 socialMediaText="@jonny0702"
                 socialsLinks="https://github.com/jonny0702"
                 renderSocialIcon={() => (
-                  <IoLogoGithub className={styles.SocialIcons} />
+                  <IoLogoGithub
+                    className={`${
+                      !darkMode
+                        ? styles.SocialIcons
+                        : styles['SocilaIcons--light']
+                    }`}
+                  />
                 )}
               />
               <Socials
+                darkMode={darkMode}
                 socialMediaText="@jonhy_vr"
                 socialsLinks="https://www.twitch.tv/jonhy_vr"
                 renderSocialIcon={() => (
-                  <IoLogoTwitch className={styles.SocialIcons} />
+                  <IoLogoTwitch
+                    className={`${
+                      !darkMode
+                        ? styles.SocialIcons
+                        : styles['SocilaIcons--light']
+                    }`}
+                  />
                 )}
               />
             </HomeBody>
-            <ContactMeSection>
+            <ContactMeSection darkMode={darkMode}>
               <TitleSection titleText="Contact Me" />
             </ContactMeSection>
           </main>
