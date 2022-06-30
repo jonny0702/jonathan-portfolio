@@ -1,4 +1,5 @@
 import { Request, Response} from 'express'
+
 interface mailDataI {
   from: string,
   to: string,

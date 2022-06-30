@@ -12,6 +12,7 @@ export default function SlideMenuBarItem({
       <Link href={routes}>
         <a className={styles['SlideMenuItems__container--links']}>
           <button
+            type="button"
             className={`${
               !darkMode
                 ? styles.SlideMenuItems__links

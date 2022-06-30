@@ -13,7 +13,7 @@ export default function MenuButton({
         onClick={action}
         className={`${
           isDarkmodeButton ? styles.MenuButtonDarkmode : styles.MenuButton
-        } ${!darkMode ? styles.MenuButton : style['MenuButtom--light']} ${
+        } ${!darkMode ? styles.MenuButton : styles['MenuButtom--light']} ${
           !darkMode ? styles.MenuButtonDarkMode : styles.MenuButtonLightMode
         }
         `}

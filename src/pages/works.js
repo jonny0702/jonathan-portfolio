@@ -45,7 +45,7 @@ export default function Works() {
             : styles['Works__container--light']
         }`}
       >
-        <section className={styles['Model__container']}>
+        <section className={styles.Model__container}>
           <VoxelContainer />
         </section>
         <section className={`${styles.WorksInfo__container}`}>

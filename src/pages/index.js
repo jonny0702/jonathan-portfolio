@@ -64,7 +64,7 @@ export default function Home() {
             : styles['Home__container--LightMode']
         }`}
       >
-        <section className={styles['Model__container']}>
+        <section className={styles.Model__container}>
           <VoxelContainer />
         </section>
         <section className={styles['presentation__section--container']}>
@@ -78,7 +78,6 @@ export default function Home() {
                   Full stack developer/Artist/Science Geek
                 </span>
               </div>
-              <div></div>
             </header>
           </HeaderContainer>
           <main className={styles.MainPage__infoContainer}>
