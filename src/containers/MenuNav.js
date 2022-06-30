@@ -21,7 +21,13 @@ export default function MenuNav({ renderSlideMenuBar, isWorksPage }) {
     handleDisplayMenu(!isOpen);
   };
   return (
-    <nav className={`${styles.MenuNav__container}`}>
+    <nav
+      className={`${
+        !darkMode
+          ? styles.MenuNav__container
+          : styles['MenuNav__container--light']
+      }`}
+    >
       <div className={styles['MenuNav__navigationBar--container']}>
         <Link href="/">
           <a

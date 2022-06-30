@@ -1,0 +1,34 @@
+@import '__vars'
+
+.SubmitModal__container
+  position: absolute
+  display: flex
+  justify-content: center
+  width: 100%
+  height: 22vh
+  z-index: 500
+  background: #2a293344
+  backdrop-filter: blur(20px)
+  color: $White
+  transition: ease all 2s
+.SubmitModal__info--container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  gap: 1rem
+  margin: 2rem
+.SubmitModal__title
+  font-size: $title-size
+  font-weight: 300
+.SubmitModal__button
+  padding: 0.5rem 2.5rem
+  border: none
+  border-radius: 25px
+  box-shadow: 0 0 7px $Letter-orange
+  background: $Letter-orange
+  font-family: inherit
+  font-size: $text-size
+  text-decoration: none
+  color: $White
+  cursor: pointer
