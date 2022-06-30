@@ -1,13 +1,27 @@
 @import '__vars'
 
+.Home__container
+  height: 100%
+  color: $White
+  background: $Elegant-black
+  z-index: -30
+  transition: ease all 1s
+
+.Home__container--LightMode
+  height: 100%
+  color: $Elegant-black
+  z-index: -30
+  background: $Warm-light
+  transition: ease all 1s
 .Model__container
   display: flex
   height: 50vh
   width: 100vw
-  z-index: -10
+
 .presentation__section--container
   width: 100vw
   height: fit-content
+
 .Header__container
   display: flex
   font-family: $Main-font
@@ -26,16 +40,19 @@
 .MainPage__infoContainer
   display: flex
   width: 100%
+  height: 100%
   flex-direction: column
   align-content: center
   gap: 1rem
-  // border: 2px solid grey
 .MainPage__infoContainer--text
   width: 95%
   margin: auto
 .SocialIcons
   font-size: 2rem
   color: $Backg-blue
+.SocilaIcons--light
+  font-size: 2rem
+  color: $Icon-blue
 .icons__image--container
   position: relative
   width: 5rem
@@ -43,21 +60,20 @@
 .iconImage
   width: 4rem
   height: 4rem
-.Loader__container--section
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  width: 100vw
-  height: 100vh
-  gap: 1rem
-.text__loader
-  font-family: $Main-font
-  font-size: $sub-title-size
+
 @media  ( min-width: 768px )
   .Home__container
+    height: 150vh
     display: flex
     flex-direction: row-reverse
+  .Home__container--LightMode
+    display: flex
+    flex-direction: row-reverse
+    height: 150vh
+    color: $Elegant-black
+    background: $Warm-light
+    transition: ease all 1s
+    z-index: -30
   .presentation__section--container
     display: flex
     flex-direction: column
@@ -86,6 +102,12 @@
     width: 35vw
 @media  ( min-width: 1500px )
   .presentation__section--container
-    margin-top:0 
+    margin-top:10rem 
+    margin-right: 90rem 
+    width: 35vw
+
+@media  ( min-width: 1600px )
+  .presentation__section--container
+    margin-top:10rem 
     margin-right: 90rem 
     width: 35vw

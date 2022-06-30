@@ -1,6 +1,13 @@
+@import '__vars'
+
 .Model__container
   display: flex
   width: 100%
   margin: auto
   height: 90%
-  z-index: -2
+  z-index: 10
+
+@media (min-width: 768px) 
+  .Model__container
+    z-index: 100
+  

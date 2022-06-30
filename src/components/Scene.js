@@ -15,7 +15,6 @@ export default function Model({ ...props }) {
   const { nodes, materials, animations } = useGLTF('/scene.gltf');
   const { actions } = useAnimations(animations, group);
   useEffect(() => {
-    console.log(actions);
     actions.Keyboard.play();
   });
   return (

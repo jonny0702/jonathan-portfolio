@@ -1,10 +1,12 @@
 import Link from 'next/link';
+
 import styles from '../styles/Socials.module.sass';
 
 export default function Socials({
   socialMediaText,
   renderSocialIcon,
   socialsLinks,
+  darkMode,
 }) {
   return (
     <div className={styles.Socials__container}>
@@ -12,7 +14,15 @@ export default function Socials({
         <a className={styles.Socials__link}>
           <div className={styles.Socials__infoContainer}>
             {renderSocialIcon && renderSocialIcon({})}
-            <span className={styles.Socials__text}>{socialMediaText}</span>
+            <span
+              className={`${
+                !darkMode
+                  ? styles.Socials__text
+                  : styles['Socials__text--light']
+              }`}
+            >
+              {socialMediaText}
+            </span>
           </div>
         </a>
       </Link>

@@ -1,7 +1,7 @@
 import Button from '../components/Button';
 import styles from '../styles/ContactMeSection.module.sass';
 
-export default function ContactMeSection({ children, isWorksPage }) {
+export default function ContactMeSection({ children, isWorksPage, darkMode }) {
   return (
     <>
       <div
@@ -17,7 +17,9 @@ export default function ContactMeSection({ children, isWorksPage }) {
           <form className={styles['contact__form']}>
             <textarea
               type="text"
-              className={styles.inputTextArea}
+              className={`${
+                !darkMode ? styles.inputTextArea : styles.inputTextArea__light
+              }`}
               placeholder="Text here..."
             />
             <Button buttonText="Submit" routes="/" />
