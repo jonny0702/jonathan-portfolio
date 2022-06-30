@@ -6,7 +6,9 @@ export default function Button({ buttonText, routes }) {
     <div className={styles.ButtonWoks__container}>
       <Link href={routes}>
         <a>
-          <button className={styles.ButtonWorks__button}>{buttonText}</button>
+          <button type="button" className={styles.ButtonWorks__button}>
+            {buttonText}
+          </button>
         </a>
       </Link>
     </div>
