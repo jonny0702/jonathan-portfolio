@@ -44,23 +44,23 @@ export default function MenuNav({ renderSlideMenuBar, isWorksPage }) {
         {tablet && (
           <>
             <SlideMenuBarItem
-              itemText="$/About"
+              itemText="./About"
               routes="/"
               darkMode={darkMode}
             />
             <SlideMenuBarItem
-              itemText="$/Works"
+              itemText="./Works"
               routes="/works"
               darkMode={darkMode}
             />
             <SlideMenuBarItem
               darkMode={darkMode}
-              itemText="$/Contact"
+              itemText="./Contact"
               routes={`${isWorksPage ? '/works/#contact' : '/#contact'}`}
             />
             <SlideMenuBarItem
               darkMode={darkMode}
-              itemText="$/GitHub"
+              itemText="./GitHub"
               routes="https://github.com/jonny0702"
             />
           </>

@@ -12,20 +12,20 @@ export default function SlideMenuBar({ isOpen, darkMode }) {
       style={{ transform: `translateX(${isOpen ? '0' : '100%'})` }}
     >
       <ul className={styles['slideMenuBar__items--container']}>
-        <SlideMenuBarItem darkMode={darkMode} itemText="$/About" routes="/" />
+        <SlideMenuBarItem darkMode={darkMode} itemText="./About" routes="/" />
         <SlideMenuBarItem
           darkMode={darkMode}
-          itemText="$/Works"
+          itemText="./Works"
           routes="/works"
         />
         <SlideMenuBarItem
           darkMode={darkMode}
-          itemText="$/contact"
+          itemText="./contact"
           routes="/#contact"
         />
         <SlideMenuBarItem
           darkMode={darkMode}
-          itemText="$/GitHub"
+          itemText="./GitHub"
           routes="https://github.com/jonny0702"
         />
       </ul>

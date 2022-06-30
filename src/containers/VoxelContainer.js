@@ -1,16 +1,9 @@
 import { Suspense, useRef, useEffect, useState } from 'react';
-import {
-  Canvas,
-  useThree,
-  pointLight,
-  ambientLight,
-  useFrame,
-} from '@react-three/fiber';
-import { OrbitControls, Box, Sphere } from '@react-three/drei';
+import { Canvas, useThree, useFrame } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 import useScreenMediaQuery from '../hooks/useScreenMediaquery';
 import Scene from '../components/Scene';
-import LoaderContainer from './LoaderContainer';
 import styles from '../styles/VoxelModel.module.sass';
 
 const Controls = () => {
@@ -102,17 +95,12 @@ export default function VoxelContainer() {
               20 * Math.cos(0.2 * Math.PI),
             ]}
             intensity={0.3}
-            color={'#FFFF'}
+            color="#FFE38B"
             far={500}
           />
-          <ambientLight color={'#FFFF'} intensity={0.5} />
-          {/* <Controls /> */}
-          {/* <CameraHelper /> */}
+          <ambientLight intensity={0.5} />
         </Canvas>
       </Suspense>
     </div>
   );
 }
-// 20 * Math.sin(20 * Math.PI),
-// 10,
-// 10 * Math.cos(10 * Math.PI),

@@ -113,7 +113,7 @@ export default function Home() {
                 ))}
               </SkillsSection>
               <TitleSection titleText="I ❤" />
-              <BodyParagraph text="Art, Music, Drawing, Playing Piano and Guitar, Phography, Math and Science" />
+              <BodyParagraph text="Art, Music, Drawing, Playing Piano and Guitar, Photography, Math and Science" />
               <TitleSection titleText="Socials" />
               <Socials
                 darkMode={darkMode}
