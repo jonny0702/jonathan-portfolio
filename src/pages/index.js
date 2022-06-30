@@ -26,6 +26,7 @@ import styles from '../styles/Home.module.sass';
 
 export default function Home() {
   const { darkMode } = useContext(DarkModeContext);
+
   const {
     isReady,
     query: { state },

@@ -1,5 +1,4 @@
 import { Request, Response} from 'express'
-
 interface mailDataI {
   from: string,
   to: string,
@@ -27,6 +26,7 @@ export default function (req:Request, res:Response){
       pass: KEY
     }
   })
+  
 const mailData: mailDataI  = {
   from: req.body.email,
   to: SERVER,

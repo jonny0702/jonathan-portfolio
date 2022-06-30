@@ -12,6 +12,7 @@ import styles from '../styles/Works.module.sass';
 
 export default function Works() {
   const { darkMode } = useContext(DarkModeContext);
+
   const { isReady } = useRouter();
 
   const [works, setWorks] = useState([]);
@@ -53,8 +54,8 @@ export default function Works() {
             {hasWorks &&
               works.map((info) => (
                 <CardInfo
+                  key={info.id}
                   darkMode={darkMode}
-                  keys={info.id}
                   images={info.photos[0]}
                   titleProject={info.name}
                   projectDescription={info.description}
