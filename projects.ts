@@ -18,7 +18,7 @@ export const projects: ProjectsT[] = [
   {
     id: '1',
     name: 'Lost Traveller',
-    description: 'A internal turism digital service to share the beatifull places that we not know in panama',
+    description: 'A internal turism web app to share beautiful places that we not know in panama',
     platform: 'Web',
     stack: 'JavaScript, NextJs, React, Firebase',
     presentation: 'https://losttraveler.vercel.app/',
@@ -28,7 +28,7 @@ export const projects: ProjectsT[] = [
   {
     id: '2',
     name: 'Lost Traveller Admin',
-    description: 'The admin side of Lost Traveller which is responsible for managing the verification request and uploaded posts',
+    description: 'Is the admin platform of Lost Traveller web app. The platform takes of the verification process and the validation of posts',
     platform: 'Web',
     stack: 'JavaScript, NextJs, React, Firebase',
     presentation: 'https://github.com/jonny0702/lost-traveller-next-dashboard',
@@ -38,7 +38,7 @@ export const projects: ProjectsT[] = [
   {
     id: '3',
     name: 'Weather App',
-    description: 'App that show the weather data in your area',
+    description: 'Web app that shows the weather data in your area',
     platform: 'Web',
     stack: 'JavaScript, NextJs, React, Firebase',
     presentation: 'https://weather-r-app.netlify.app',
