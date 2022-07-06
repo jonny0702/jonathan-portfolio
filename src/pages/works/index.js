@@ -31,7 +31,6 @@ export default function Works() {
   useEffect(() => {
     isReady && fetchPost();
   }, [isReady]);
-  console.log(works);
   return (
     <>
       <MenuNav

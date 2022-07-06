@@ -10,7 +10,7 @@ interface ProjectsT {
   stack: string;
   link:string;
   dates: string;
-  website: string;
+  website?: string;
   photos: Array<string>;
 }
 
@@ -33,7 +33,6 @@ export const projects: ProjectsT[] = [
     description: 'Is the admin platform of Lost Traveller web app. The platform takes of the verification process and the validation of posts',
     platform: 'Web App',
     stack: 'JavaScript, NextJs, React, Firebase',
-    website: 'https://github.com/jonny0702/lost-traveller-next-dashboard',
     link: `works`,
     dates:'2022-',
     photos: [lostTravellerAdmin],

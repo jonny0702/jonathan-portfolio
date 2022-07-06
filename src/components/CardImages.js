@@ -1,11 +1,16 @@
 import Image from 'next/image';
-import LostTraveller from '../assets/img/LostTraveller.png';
 import styles from '../styles/CardImages.module.sass';
 
-export default function CardImages({ photos }) {
+export default function CardImages({ photos, darkMode }) {
   return (
     <>
-      <div className={styles.CardImages__container}>
+      <div
+        className={`${
+          !darkMode
+            ? styles.CardImages__container
+            : styles['CardImages__container--light']
+        }`}
+      >
         <Image
           className={styles.CardImages__image}
           layout="fill"

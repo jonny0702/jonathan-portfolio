@@ -54,23 +54,48 @@ export default function Works() {
         <section className={`${styles.WorkDetailInfo__container}`}>
           <div className={styles['WorkInfo__Title--container']}>
             <Link href="/works">
-              <a className={styles.WorksDetailInfo__linkBack}>works</a>
+              <a
+                className={`${
+                  !darkMode
+                    ? styles.WorksDetailInfo__linkBack
+                    : styles['WorksDetailInfo__linkBack--light']
+                }`}
+              >
+                works
+              </a>
             </Link>
             <h2 className={styles.WorksDetail__title}>
               {' '}
               {'>'} {workInfo.name}
             </h2>
-            <div className={styles.WorksDetail__date}>
+            <div
+              className={`${
+                !darkMode
+                  ? styles.WorksDetail__date
+                  : styles['WorksDetail__date--light']
+              }`}
+            >
               <span>{workInfo.dates}</span>
             </div>
           </div>
           <WorkDetail>
-            <BodyParagraph text={workInfo.description} />
-            <Stacks title="WEBSITE" info={workInfo.website} isLink />
-            <Stacks title="PLATFORM" info={workInfo.platform} />
-            <Stacks title="STACK" info={workInfo.stack} />
+            <BodyParagraph text={workInfo?.description} />
+            <Stacks
+              darkMode={darkMode}
+              title="WEBSITE"
+              info={workInfo?.website}
+              isLink
+            />
+            <Stacks
+              darkMode={darkMode}
+              title="PLATFORM"
+              info={workInfo?.platform}
+            />
+            <Stacks darkMode={darkMode} title="STACK" info={workInfo?.stack} />
             <MediaContainer>
-              {hasPhotos && <CardImages photos={photos[0]} />}
+              {hasPhotos && (
+                <CardImages photos={photos[0]} darkMode={darkMode} />
+              )}
             </MediaContainer>
           </WorkDetail>
         </section>
