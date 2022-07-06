@@ -9,7 +9,8 @@ interface ProjectsT {
   platform: string;
   stack: string;
   link:string;
-  presentation: string;
+  dates: string;
+  website: string;
   photos: Array<string>;
 }
 
@@ -19,30 +20,33 @@ export const projects: ProjectsT[] = [
     id: '1',
     name: 'Lost Traveller',
     description: 'A internal turism web app to share beautiful places that we not know in panama',
-    platform: 'Web',
+    platform: 'Web App',
     stack: 'JavaScript, NextJs, React, Firebase',
-    presentation: 'https://losttraveler.vercel.app/',
+    website: 'https://losttraveler.vercel.app/',
     link: `works`,
+    dates:'2021-',
     photos: [lostTraveller],
   },
   {
     id: '2',
     name: 'Lost Traveller Admin',
     description: 'Is the admin platform of Lost Traveller web app. The platform takes of the verification process and the validation of posts',
-    platform: 'Web',
+    platform: 'Web App',
     stack: 'JavaScript, NextJs, React, Firebase',
-    presentation: 'https://github.com/jonny0702/lost-traveller-next-dashboard',
+    website: 'https://github.com/jonny0702/lost-traveller-next-dashboard',
     link: `works`,
+    dates:'2022-',
     photos: [lostTravellerAdmin],
   },
   {
     id: '3',
     name: 'Weather App',
     description: 'Web app that shows the weather data in your area',
-    platform: 'Web',
+    platform: 'Web App',
     stack: 'JavaScript, NextJs, React, Firebase',
-    presentation: 'https://weather-r-app.netlify.app',
+    website: 'https://weather-r-app.netlify.app',
     link: `works`,
+    dates:'2022-2022',
     photos: [weatherApp],
   },
 ];
