@@ -55,7 +55,7 @@ export default function Works() {
                 <CardInfo
                   key={info.id}
                   darkMode={darkMode}
-                  images={info.photos[0]}
+                  images={info.photos[0].metaData}
                   titleProject={info.name}
                   projectDescription={info.description}
                   link={`works/${info.id}`}

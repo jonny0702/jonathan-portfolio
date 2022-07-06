@@ -22,7 +22,9 @@ export default function Works() {
 
   const [workInfo, setWorkInfo] = useState({});
   const [photos, setPhotos] = useState([]);
+
   const hasPhotos = photos.length > 0;
+
   const fetchWork = async () => {
     try {
       const res = await fetch(`/api/works/${workid}`);
@@ -93,9 +95,15 @@ export default function Works() {
             />
             <Stacks darkMode={darkMode} title="STACK" info={workInfo?.stack} />
             <MediaContainer>
-              {hasPhotos && (
-                <CardImages photos={photos[0]} darkMode={darkMode} />
-              )}
+              {hasPhotos &&
+                photos.map((photo) => (
+                  <CardImages
+                    key={photo.id}
+                    photos={photo.metaData}
+                    darkMode={darkMode}
+                    alt={photo.name}
+                  />
+                ))}
             </MediaContainer>
           </WorkDetail>
         </section>

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from '../styles/CardImages.module.sass';
 
-export default function CardImages({ photos, darkMode }) {
+export default function CardImages({ photos, darkMode, alt }) {
   return (
     <>
       <div
@@ -16,6 +16,7 @@ export default function CardImages({ photos, darkMode }) {
           layout="fill"
           src={photos}
           objectFit="cover"
+          alt={alt}
         />
       </div>
     </>
