@@ -81,7 +81,7 @@ export default function Works() {
             </div>
           </div>
           <WorkDetail>
-            <BodyParagraph text={workInfo?.description} />
+            <BodyParagraph text={workInfo?.detail} isNotHome />
             <Stacks
               darkMode={darkMode}
               title="WEBSITE"
