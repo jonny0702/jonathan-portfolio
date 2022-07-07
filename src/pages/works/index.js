@@ -1,14 +1,14 @@
 import { useEffect, useState, useContext } from 'react';
 import { useRouter } from 'next/router';
-import { DarkModeContext } from '../context/DarkModeContext';
-import TitleSection from '../components/TitleSection';
-import MenuNav from '../containers/MenuNav';
-import SlideMenuBar from '../containers/SlideMenuBar';
-import VoxelContainer from '../containers/VoxelContainer';
-import PortfolioContainer from '../containers/PortfolioContainer';
-import CardInfo from '../components/CardInfo';
-import ContactMeSection from '../containers/ContactMeSection';
-import styles from '../styles/Works.module.sass';
+import MenuNav from '../../containers/MenuNav';
+import TitleSection from '../../components/TitleSection';
+import VoxelContainer from '../../containers/VoxelContainer';
+import ContactMeSection from '../../containers/ContactMeSection';
+import { DarkModeContext } from '../../context/DarkModeContext';
+import SlideMenuBar from '../../containers/SlideMenuBar';
+import PortfolioContainer from '../../containers/PortfolioContainer';
+import CardInfo from '../../components/CardInfo';
+import styles from '../../styles/Works.module.sass';
 
 export default function Works() {
   const { darkMode } = useContext(DarkModeContext);
@@ -31,7 +31,6 @@ export default function Works() {
   useEffect(() => {
     isReady && fetchPost();
   }, [isReady]);
-
   return (
     <>
       <MenuNav
@@ -56,10 +55,10 @@ export default function Works() {
                 <CardInfo
                   key={info.id}
                   darkMode={darkMode}
-                  images={info.photos[0]}
+                  images={info.photos[0].metaData}
                   titleProject={info.name}
                   projectDescription={info.description}
-                  link={`${info.presentation}`}
+                  link={`works/${info.id}`}
                 />
               ))}
           </PortfolioContainer>

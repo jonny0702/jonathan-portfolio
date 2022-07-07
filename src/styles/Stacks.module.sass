@@ -1,0 +1,71 @@
+@import '__vars'
+
+.Stacks__container
+  display: flex
+  flex-direction: row
+  justify-content: center
+  width: 95%
+  margin: auto
+  margin-top: 1rem 
+.Stacks__containeer--info
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  gap: .5rem 
+  width: 100%
+  height: fit-content
+.Stacks__container--title
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 1rem
+  width: fit-content
+  height: 2rem
+  border-radius: 3px
+  background: #00998f75
+.Stacks__container--title-light
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 1rem
+  width: fit-content
+  height: 2rem
+  border-radius: 3px
+  background: #00dacb59
+.Stacks__info--title
+  color: $Button-blue
+  font-size: $middle-text-size
+.Stacks__info--title-light
+  color: $Icon-blue
+  font-size: $middle-text-size
+.Stack__info--text
+  align-self: center
+  font-size: $middle-text-size
+.stacks__info--link
+  align-self: center
+  font-size: $middle-text-size
+  text-decoration: none
+  color: $Icon-blue
+  cursor: pointer
+.stacks__info--link:hover
+  align-self: center
+  font-size: $middle-text-size
+  text-decoration: none
+  color: $Button-blue
+  cursor: pointer
+@media (min-width: 768px) 
+  .Stacks__container
+    margin: 0
+    margin-bottom:1rem  
+  .Stacks__info--title
+    font-size: $text-size 
+  .Stack__info--text
+    font-size: $text-size
+  .stacks__info--link
+    font-size: $text-size
+  .stacks__info--link:hover
+    align-self: center
+    font-size: $text-size
+    text-decoration: none
+    color: $Button-blue
+    cursor: pointer
