@@ -17,6 +17,11 @@ const weatherAppResponsive =
   'https://firebasestorage.googleapis.com/v0/b/portfolio-fca3e.appspot.com/o/WeatherAppTablet.png?alt=media&token=9d7c9dfc-43e5-410f-b016-a65c0f8e016a';
 const weatherAppDisplay =
   'https://firebasestorage.googleapis.com/v0/b/portfolio-fca3e.appspot.com/o/WeatherAppTabletDisplay.png?alt=media&token=8debb0a3-fd31-4f66-9d82-fa111b8a46eb';
+const pokedex = 'https://firebasestorage.googleapis.com/v0/b/portfolio-fca3e.appspot.com/o/Pokedex.png?alt=media&token=17443364-ebe0-4347-9d1e-aebc1527d2ae'
+
+const pokemonDetail = 'https://firebasestorage.googleapis.com/v0/b/portfolio-fca3e.appspot.com/o/PokemonDetai%C3%B1.jpg?alt=media&token=c8b0fa0f-54c2-48a6-a6f0-a62747b8c2de';
+const pokemonStats = 'https://firebasestorage.googleapis.com/v0/b/portfolio-fca3e.appspot.com/o/PokemonStats.jpg?alt=media&token=94b1df59-43af-45ad-901b-43923e65ad23'
+
 interface ProjectsT {
   id: string;
   name: string;
@@ -113,6 +118,34 @@ export const projects: ProjectsT[] = [
         id: 2,
         name: 'display',
         metaData: weatherAppDisplay,
+      },
+    ],
+  },
+  {
+    id: '4',
+    name: 'Pokedex App',
+    description: 'A pokedex,  based in the famous Pokemon Saga. Is a diccionary of pokemons that can study the pokemons.',
+    detail:'It is a pokedex where we can get the info of all the pokemons that exist (905 pokemons)',
+    platform: 'Mobile App',
+    stack: 'JavaScript, React Native, Expo, Expo-Three',
+    website: 'APK Link',
+    link: `works`,
+    dates: '2022-2022',
+    photos: [
+      {
+        id: 0,
+        name: 'pokedex',
+        metaData: pokedex,
+      },
+      {
+        id: 1,
+        name: 'pokemonDetail',
+        metaData: pokemonDetail,
+      },
+      {
+        id: 2,
+        name: 'pokemonStats',
+        metaData: pokemonStats,
       },
     ],
   },
