@@ -19,8 +19,8 @@ const weatherAppDisplay =
   'https://firebasestorage.googleapis.com/v0/b/portfolio-fca3e.appspot.com/o/WeatherAppTabletDisplay.png?alt=media&token=8debb0a3-fd31-4f66-9d82-fa111b8a46eb';
 const pokedex = 'https://firebasestorage.googleapis.com/v0/b/portfolio-fca3e.appspot.com/o/Pokedex.png?alt=media&token=17443364-ebe0-4347-9d1e-aebc1527d2ae'
 
-const pokemonDetail = 'https://firebasestorage.googleapis.com/v0/b/portfolio-fca3e.appspot.com/o/PokemonDetai%C3%B1.jpg?alt=media&token=c8b0fa0f-54c2-48a6-a6f0-a62747b8c2de';
-const pokemonStats = 'https://firebasestorage.googleapis.com/v0/b/portfolio-fca3e.appspot.com/o/PokemonStats.jpg?alt=media&token=94b1df59-43af-45ad-901b-43923e65ad23'
+const pokemonDetail = 'https://firebasestorage.googleapis.com/v0/b/portfolio-fca3e.appspot.com/o/Pokemons.png?alt=media&token=feb77b5b-53c7-46dc-837b-d9ccf4b344c3';
+const pokemonStats = 'https://firebasestorage.googleapis.com/v0/b/portfolio-fca3e.appspot.com/o/PokemonStats.png?alt=media&token=94f86be1-9517-41f8-bc8f-bfbaa07da04f'
 
 interface ProjectsT {
   id: string;
@@ -128,7 +128,7 @@ export const projects: ProjectsT[] = [
     detail:'It is a pokedex where we can get the info of all the pokemons that exist (905 pokemons)',
     platform: 'Mobile App',
     stack: 'JavaScript, React Native, Expo, Expo-Three',
-    website: 'APK Link',
+    website: 'https://expo.dev/artifacts/1b10e891-fca5-45e5-9f66-943303acfcf3',
     link: `works`,
     dates: '2022-2022',
     photos: [
